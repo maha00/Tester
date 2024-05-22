@@ -17,7 +17,7 @@ export class DataService {
   }
 
   getData(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/data`);
+    return this.http.get<any>(`http://127.0.0.1:5000/data`);
   }
 
   updateData(element: any): Observable<any> {
