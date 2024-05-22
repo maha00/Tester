@@ -40,7 +40,9 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  <button mat-button (click)="openAddDialog()">Ajouter un test</button>
+  <div class="button-container">
+    <button mat-button (click)="openAddDialog()">Ajouter un test</button>
+  </div>
 
 </div>
 </div>

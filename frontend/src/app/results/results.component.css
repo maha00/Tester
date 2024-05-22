@@ -4,4 +4,11 @@
 
 .results-container {
   margin-top: 20px;
+  .button-container{
+    width: 100px;
+    mat-button{
+      width: 80px;
+      height: 40px;
+    }
+  }
 }
