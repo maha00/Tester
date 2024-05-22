@@ -4,6 +4,8 @@ from flask import Flask, request, jsonify,send_from_directory
 from flask_cors import CORS
 import json
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+data_path = os.path.join(BASE_DIR, 'data.json')
 app = Flask(__name__,static_folder='../frontend/dist/frontend/browser')
 CORS(app)
 @app.route('/', defaults={'path': ''})
@@ -21,12 +23,12 @@ def login():
     return jsonify({'message': 'Logged in successfully', 'user': user})
 
 def read_data():
-    with open('data.json', 'r') as file:
+    with open(data_path, 'r') as file:
         data = json.load(file)
     return data
 
 def write_data(data):
-    with open('data.json', 'w') as file:
+    with open(data_path, 'w') as file:
         json.dump(data, file, indent=4)
 
 @app.route('/data', methods=['GET'])
