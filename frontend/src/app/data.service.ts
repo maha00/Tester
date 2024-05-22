@@ -10,19 +10,19 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string): Observable<any> {
-    return this.http.post('http://127.0.0.1:5000/login', {username, password});
+    return this.http.post('https://127.0.0.1:5000/login', {username, password});
   }
 
   getData(): Observable<any> {
-    return this.http.get<any>('http://127.0.0.1:5000/data');
+    return this.http.get<any>('https://127.0.0.1:5000/data');
   }
 
   updateData(element: any): Observable<any> {
-    return this.http.post('http://127.0.0.1:5000/update_data', element);
+    return this.http.post('https://127.0.0.1:5000/update_data', element);
   }
 
   addData(newData: any): Observable<any> {
-    return this.http.post(`http://127.0.0.1:5000/add_data`, newData);
+    return this.http.post(`https://127.0.0.1:5000/add_data`, newData);
   }
 
 }

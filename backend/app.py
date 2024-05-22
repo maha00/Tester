@@ -5,7 +5,7 @@ from flask_cors import CORS
 import json
 
 app = Flask(__name__,static_folder='../frontend/dist/frontend/browser')
-CORS(app, resources={r"/login": {"origins": "https://testeraziz-047f20242fc1.herokuapp.com"}})
+CORS(app)
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve(path):
