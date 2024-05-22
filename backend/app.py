@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify,send_from_directory
 from flask_cors import CORS
 import json
 
-app = Flask(__name__,static_folder='../frontend/dist/frontend')
+app = Flask(__name__,static_folder='../frontend/dist/frontend/browser')
 CORS(app)
 
 @app.route('/', defaults={'path': ''})
