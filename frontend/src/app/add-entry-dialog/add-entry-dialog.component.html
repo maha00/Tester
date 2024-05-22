@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Ajouter un Test</h2>
+<mat-dialog-content class="mat-typography">
+  <mat-form-field appearance="fill">
+    <mat-label>Date</mat-label>
+    <input matInput [(ngModel)]="data.date" placeholder="e.g., 20/05/2024" type="date">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Heure</mat-label>
+    <input matInput [(ngModel)]="data.heure" placeholder="HH:MM:SS" type="time">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Test de Court-circuit</mat-label>
+    <input matInput [(ngModel)]="data.testCourtCircuit">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Test de Fuite de Tension</mat-label>
+    <input matInput [(ngModel)]="data.testFuiteTension">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Annuler</button>
+  <button mat-button [mat-dialog-close]="data" (click)="onSave()" cdkFocusInitial>Enregistrer</button>
+</mat-dialog-actions>

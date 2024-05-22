@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Modifier le Test</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Test de Court-circuit</mat-label>
+    <input matInput [(ngModel)]="data.testCourtCircuit">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Test de Fuite de Tension</mat-label>
+    <input matInput [(ngModel)]="data.testFuiteTension">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Annuler</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Enregistrer</button>
+</div>
