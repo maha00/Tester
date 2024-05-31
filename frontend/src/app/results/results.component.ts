@@ -11,7 +11,7 @@ import {AddEntryDialogComponent} from "../add-entry-dialog/add-entry-dialog.comp
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-  displayedColumns: string[] = ['date', 'heure', 'testCourtCircuit', 'testFuiteTension', 'edit'];
+  displayedColumns: string[] = ['date', 'heure', 'testCourtCircuit', 'testFuiteTension', 'edit', 'delete'];
   dataSource: any;
 
   constructor(private router: Router, private dataService: DataService, public dialog: MatDialog) {
@@ -29,7 +29,6 @@ export class ResultsComponent implements OnInit {
         testCourtCircuit: item["testCourtCircuit"],
         testFuiteTension: item["testFuiteTension"]
       }));
-      console.log(data)
     });
   }
 
@@ -62,6 +61,13 @@ export class ResultsComponent implements OnInit {
       }
     }, error => {
       console.error('Failed to update:', error);
+    });
+  }
+  deleteEntry(element: any): void {
+    this.dataService.deleteData(element).subscribe(response => {
+      this.fetchData();
+    }, error => {
+      console.error('Error deleting entry:', error);
     });
   }
   openAddDialog(): void {

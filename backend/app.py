@@ -76,6 +76,16 @@ def write_data(data):
 def get_data():
     data = read_data()
     return jsonify(data)
+@app.route('/delete_data', methods=['POST'])
+def delete_data():
+    try:
+        entry_to_delete = request.json
+        data = read_data()
+        data = [item for item in data if not (item['date'] == entry_to_delete['date'] and item['heure'] == entry_to_delete['heure'])]
+        write_data(data)
+        return jsonify({'status': 'success', 'message': 'Entry deleted successfully'}), 200
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
 
 
 @app.route('/add_data', methods=['POST'])

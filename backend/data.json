@@ -24,12 +24,6 @@
         "testFuiteTension": "D\u00e9tection 0V en pin 4"
     },
     {
-        "date": "16.05.2024",
-        "heure": "8:57:12",
-        "testCourtCircuit": "Test valid\u00e9",
-        "testFuiteTension": "D\u00e9tection 5V en pin 1"
-    },
-    {
         "date": "15.05.2024",
         "heure": "17:17:44",
         "testCourtCircuit": "C-C entre pin 2 et 3",

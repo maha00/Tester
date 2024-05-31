@@ -4,38 +4,43 @@
   <button mat-button (click)="logout()">Logout</button>
 </mat-toolbar>
 <div class="results-container">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-      <ng-container matColumnDef="date">
-        <th mat-header-cell *matHeaderCellDef> Date</th>
-        <td mat-cell *matCellDef="let element"> {{ element.date }}</td>
-      </ng-container>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Date</th>
+      <td mat-cell *matCellDef="let element"> {{ element.date }}</td>
+    </ng-container>
 
-      <ng-container matColumnDef="heure">
-        <th mat-header-cell *matHeaderCellDef> Heure</th>
-        <td mat-cell *matCellDef="let element"> {{ element.heure}}</td>
-      </ng-container>
+    <ng-container matColumnDef="heure">
+      <th mat-header-cell *matHeaderCellDef> Heure</th>
+      <td mat-cell *matCellDef="let element"> {{ element.heure }}</td>
+    </ng-container>
 
-      <ng-container matColumnDef="testCourtCircuit">
-        <th mat-header-cell *matHeaderCellDef> Test de Court-circuit</th>
-        <td mat-cell *matCellDef="let element"> {{ element.testCourtCircuit}}</td>
-      </ng-container>
+    <ng-container matColumnDef="testCourtCircuit">
+      <th mat-header-cell *matHeaderCellDef> Test de Court-circuit</th>
+      <td mat-cell *matCellDef="let element"> {{ element.testCourtCircuit }}</td>
+    </ng-container>
 
-      <ng-container matColumnDef="testFuiteTension">
-        <th mat-header-cell *matHeaderCellDef> Test de Fuite de Tension</th>
-        <td mat-cell *matCellDef="let element"> {{ element.testFuiteTension }}</td>
-      </ng-container>
+    <ng-container matColumnDef="testFuiteTension">
+      <th mat-header-cell *matHeaderCellDef> Test de Fuite de Tension</th>
+      <td mat-cell *matCellDef="let element"> {{ element.testFuiteTension }}</td>
+    </ng-container>
 
-      <ng-container matColumnDef="edit">
-        <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let element">
-          <mat-icon (click)="openDialog(element)">edit</mat-icon>
-        </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-    <div class="button-container">
-      <button mat-button class="add-button" (click)="openAddDialog()">Ajouter un test</button>
-    </div>
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon (click)="openDialog(element)">edit</mat-icon>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon (click)="deleteEntry(element)">delete</mat-icon>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <div class="button-container">
+    <button mat-button class="add-button" (click)="openAddDialog()">Ajouter un test</button>
+  </div>
 </div>

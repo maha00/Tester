@@ -29,4 +29,8 @@ export class DataService {
   addData(newData: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/add_data`, newData);
   }
+
+  deleteData(element: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/delete_data`, element);
+  }
 }
