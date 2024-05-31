@@ -40,28 +40,5 @@
         "heure": "12:30:12",
         "testCourtCircuit": "C-C entre pin 8 et 12",
         "testFuiteTension": " Test valid\u00e9"
-    },
-    {
-        "testCourtCircuit": "test",
-        "testFuiteTension": "test",
-        "date": "26.05.2024"
-    },
-    {
-        "testCourtCircuit": "test",
-        "testFuiteTension": "trdt",
-        "date": "31.05.2024",
-        "heure": "1:27:23 PM"
-    },
-    {
-        "testCourtCircuit": "rewg",
-        "testFuiteTension": "reg",
-        "date": "2024-05-31T11:30:42.579Z",
-        "heure": "1:30:42 PM"
-    },
-    {
-        "testCourtCircuit": "edfw",
-        "testFuiteTension": "few",
-        "date": "2024-05-31T11:31:51.821Z",
-        "heure": "1:31:51 PM"
     }
 ]

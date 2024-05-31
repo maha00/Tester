@@ -20,7 +20,6 @@ export class AddEntryDialogComponent {
     this.data.heure = this.data.date.toLocaleTimeString();
 
     if (this.data.date) {
-      this.data.heure = this.datePipe.transform(this.data.heure, 'h:mm a');
       this.data.date = this.datePipe.transform(this.data.date, 'dd.MM.yyyy');
     }
     this.dialogRef.close(this.data);
