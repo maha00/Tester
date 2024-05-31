@@ -16,11 +16,11 @@ export class LoginComponent {
   login() {
     this.dataService.login(this.username, this.password).subscribe({
       next: (response) => {
-        console.log('Login successful', response);
-        this.router.navigate(['/results']);  // Redirect to the results page
+        alert(`Bienvenue ${this.username}`);
+        this.router.navigate(['/results']);
       },
       error: (error) => {
-        console.error('Login failed', error);
+        alert(error.error.message);
       }
     });
   }

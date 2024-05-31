@@ -18,11 +18,13 @@ import {MatCardModule} from "@angular/material/card";
 import {MatToolbar, MatToolbarModule} from "@angular/material/toolbar";
 import {AddEntryDialogComponent} from "./add-entry-dialog/add-entry-dialog.component";
 import { DatePipe } from '@angular/common';
+import {RegisterComponent} from "./register/register.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    RegisterComponent,
     ResultsComponent,
     EditDialogComponent,
     AddEntryDialogComponent

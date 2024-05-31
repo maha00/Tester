@@ -1,6 +1,6 @@
-import { Component, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DatePipe } from '@angular/common';
+import {Component, Inject} from '@angular/core';
+import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-add-entry-dialog',
@@ -12,10 +12,15 @@ export class AddEntryDialogComponent {
     public dialogRef: MatDialogRef<AddEntryDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private datePipe: DatePipe
-  ) {}
+  ) {
+  }
 
   onSave(): void {
+    this.data.date = new Date();
+    this.data.heure = this.data.date.toLocaleTimeString();
+
     if (this.data.date) {
+      this.data.heure = this.datePipe.transform(this.data.heure, 'h:mm a');
       this.data.date = this.datePipe.transform(this.data.date, 'dd.MM.yyyy');
     }
     this.dialogRef.close(this.data);

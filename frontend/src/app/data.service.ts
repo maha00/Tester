@@ -15,7 +15,9 @@ export class DataService {
   login(username: string, password: string): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, {username, password});
   }
-
+  registerUser(userData: { name: string; password: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/register`, userData);
+  }
   getData(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/data`);
   }
